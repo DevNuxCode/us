@@ -1,0 +1,97 @@
+---
+import VideoCard from './VideoCard.astro';
+
+interface Props {
+  videos: any[];
+  lang?: 'en' | 'es';
+}
+
+const { videos, lang = 'en' } = Astro.props;
+
+const translations = {
+  en: {
+    previous: 'Previous',
+    next: 'Next',
+  },
+  es: {
+    previous: 'Anterior',
+    next: 'Siguiente',
+  }
+};
+
+const t = translations[lang];
+---
+
+<div 
+  class="relative w-full overflow-hidden" 
+  x-data="{
+    canScrollLeft: false,
+    canScrollRight: true,
+    init() {
+      this.updateArrows();
+      window.addEventListener('resize', () => this.updateArrows());
+    },
+    scroll(direction) {
+      const container = $refs.carousel;
+      const scrollAmount = container.clientWidth;
+      
+      if (direction === 'left') {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+      
+      setTimeout(() => this.updateArrows(), 500);
+    },
+    updateArrows() {
+      const container = $refs.carousel;
+      this.canScrollLeft = container.scrollLeft > 0;
+      this.canScrollRight = container.scrollLeft < (container.scrollWidth - container.clientWidth);
+    }
+  }"
+>
+  <div 
+    class="flex transition-transform duration-500 ease-out space-x-4"
+    x-ref="carousel"
+    @scroll.debounce="updateArrows()"
+  >
+    {videos.map((video) => (
+      <div class="flex-none w-full md:w-1/2 lg:w-1/3">
+        <VideoCard
+          id={video.id}
+          date={video.date}
+          name={video.name}
+          content={video.content.rendered}
+          imageUrl={video.imageUrl}
+          url={video.url}
+          lang={lang}
+        />
+      </div>
+    ))}
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button
+    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-r-lg transition-colors"
+    @click="scroll('left')"
+    x-show="canScrollLeft"
+    x-transition.opacity
+  >
+    <span class="sr-only">{t.previous}</span>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+
+  <button
+    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-l-lg transition-colors"
+    @click="scroll('right')"
+    x-show="canScrollRight"
+    x-transition.opacity
+  >
+    <span class="sr-only">{t.next}</span>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>

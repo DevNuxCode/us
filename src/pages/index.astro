@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VideoCarousel from '../components/VideoCarousel.astro';
+
+const response = await fetch('https://www.python.distribuidoravega.cl/py/wp-json/wp/v2/video');
+const videos = await response.json();
+
+// Fetch featured media for each video
+const videosWithMedia = await Promise.all(
+  videos.map(async (video: any) => {
+    if (video['_links']['wp:featuredmedia']) {
+      const mediaId = video['_links']['wp:featuredmedia'][0].href.split('/').pop();
+      const mediaResponse = await fetch(`https://www.python.distribuidoravega.cl/py/wp-json/wp/v2/media/${mediaId}`);
+      const mediaData = await mediaResponse.json();
+      return {
+        ...video,
+        imageUrl: mediaData.guid.rendered,
+        name: video.acf?.name || video.acf?.nombre || 'Untitled',
+        url: video.acf?.url || '#'
+      };
+    }
+    return video;
+  })
+);
+---
+
+<Layout title="Understudios">
+  <!-- Hero Section -->
+  <section class="relative bg-gray-900 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        Welcome to Understudios
+      </h1>
+      <p class="mt-6 text-xl">
+        Creating amazing digital experiences
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-white dark:bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Video Production</h3>
+          <p>Professional video production services for all your needs.</p>
+        </div>
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Animation</h3>
+          <p>Creative animation services to bring your ideas to life.</p>
+        </div>
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Post-Production</h3>
+          <p>Expert post-production services for the perfect finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos" class="py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Videos</h2>
+      <VideoCarousel videos={videosWithMedia} />
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-24 bg-white dark:bg-gray-800">
+    <!-- ... (rest of the contact form remains the same) ... -->
+  </section>
+</Layout>
