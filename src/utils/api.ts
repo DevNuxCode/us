@@ -20,7 +20,10 @@ export async function getVideos() {
         name: video.acf?.name || '',
         note: video.acf?.note || '',
         bpm: video.acf?.bpm || '',
-        url: video.acf?.url || ''
+        url_dk: video.acf?.url_dk || '',
+        url: video.acf?.url || '',
+        estilo: video.acf?.estilo || '',
+
       };
     })
   );
