@@ -7,18 +7,16 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  lang?: 'en' | 'es';
 }
 
 const { 
   title, 
-  description = "Understudios - Creative Digital Agency",
-  lang = "en" 
+  description = "Understudios - Creative Digital Agency"
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang} class="h-full">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />

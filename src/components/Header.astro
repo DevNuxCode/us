@@ -1,23 +1,14 @@
 ---
-import LanguageSelector from './LanguageSelector.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import MobileMenu from './MobileMenu';
 
-const { lang = 'en' } = Astro.props;
-
-const navigation = {
-  en: [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '#services' },
-    { name: 'Videos', href: '#videos' },
-    { name: 'Contact', href: '#contact' },
-  ],
-  es: [
-    { name: 'Inicio', href: '/' },
-    { name: 'Servicios', href: '#services' },
-    { name: 'Videos', href: '#videos' },
-    { name: 'Contacto', href: '#contact' },
-  ],
-};
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '#services' },
+  { name: 'Videos', href: '#videos' },
+  { name: 'Contact', href: '#contact' },
+];
 ---
 
 <header class="sticky-nav bg-white/80 dark:bg-gray-900/80">
@@ -28,17 +19,45 @@ const navigation = {
           <span class="text-2xl font-bold text-gray-900 dark:text-white">Understudios</span>
         </a>
       </div>
-      <div class="ml-10 space-x-4 flex items-center">
-        {navigation[lang].map((link) => (
+      
+      {/* Desktop Navigation */}
+      <div class="hidden lg:flex ml-10 space-x-4 items-center">
+        {navigation.map((link) => (
           <a href={link.href} class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
             {link.name}
           </a>
         ))}
         <div class="flex items-center space-x-4">
           <ThemeToggle />
-          <LanguageSelector />
         </div>
+      </div>
+
+      {/* Mobile menu button */}
+      <div class="flex lg:hidden items-center gap-4">
+        <ThemeToggle />
+        <button
+          type="button"
+          class="mobile-menu-button inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200"
+        >
+          <span class="sr-only">Open main menu</span>
+          <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+        </button>
       </div>
     </div>
   </nav>
+
+  {/* Mobile menu */}
+  <MobileMenu client:load isOpen={false} navigation={navigation} />
 </header>
+
+<script>
+  let isMenuOpen = false;
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    document.dispatchEvent(new CustomEvent('toggleMenu', { detail: { isOpen: isMenuOpen } }));
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMenu);
+</script>
