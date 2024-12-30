@@ -31,7 +31,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
         </div>
       )}
       <div class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300">
-        {note && <span>Note: {note}</span>}
+        {note && <span>Escala: <strong>{note}</strong> </span>}
         {bpm && <span>BPM: {bpm}</span>}
       </div>
     </div>
