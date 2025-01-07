@@ -4,6 +4,4 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   integrations: [tailwind(), react()],
-  output: 'static', // o 'server' dependiendo de tu caso
-  //adapter: '@astrojs/vercel'
 });

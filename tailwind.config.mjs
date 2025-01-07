@@ -5,9 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        theme: 'var(--theme-color)',
+        theme: {
+          DEFAULT: 'var(--theme-color)',
+          red: 'var(--theme-red)',
+          blue: 'var(--theme-blue)',
+          gold: 'var(--theme-gold)',
+          yellow: 'var(--theme-yellow)',
+          purple: 'var(--theme-purple)',
+          green: 'var(--theme-green)',
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

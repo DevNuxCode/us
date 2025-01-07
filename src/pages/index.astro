@@ -8,22 +8,42 @@ const videos = await getVideos();
 
 <Layout title="Understudios">
   <!-- Hero Section -->
-  <section class="relative bg-gray-900 text-white">
+  <section class="relative hero-section text-white">
     <div class="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-       <p><img class="logo justify-self-center" src="/logo2.png" alt="My Image" width="150" height="150"></p> 
-        Bienvenidos a Understudios
+        Welcome to Understudios
       </h1>
       <p class="mt-6 text-xl">
-        La creación como expresión de un arte.
+        Creating amazing digital experiences
       </p>
     </div>
   </section>
 
-  <!-- Videos Section -->
-  <section id="videos" class="py-24 bg-white dark:bg-gray-800">
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-white dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12">Catalogo de Beats</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Video Production</h3>
+          <p>Professional video production services for all your needs.</p>
+        </div>
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Animation</h3>
+          <p>Creative animation services to bring your ideas to life.</p>
+        </div>
+        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Post-Production</h3>
+          <p>Expert post-production services for the perfect finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos" class="py-24 bg-blue-600 dark:bg-blue-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Our Videos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video) => (
           <VideoCard {...video} />
@@ -32,10 +52,10 @@ const videos = await getVideos();
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-900">
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-white dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12">Contactanos</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
       <form class="max-w-lg mx-auto">
         <div class="space-y-6">
           <div>
@@ -74,9 +94,9 @@ const videos = await getVideos();
           <div>
             <button
               type="submit"
-              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white btn-primary hover:btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-current"
             >
-              Enviar Mensaje
+              Send Message
             </button>
           </div>
         </div>

@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getVideos, getVideoById } from '../../utils/api';
+import { formatDate } from '../../utils/date';
+
+export async function getStaticPaths() {
+  const videos = await getVideos();
+  return videos.map(video => ({
+    params: { id: video.id.toString() },
+    props: { video },
+  }));
+}
+
+const { video } = Astro.props;
+const formattedDate = formatDate(video.date);
+---
+
+<Layout title={`${video.name || `Video ${video.id}`} | Understudios`}>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+      <img 
+        src={video.imageUrl} 
+        alt={video.name || `Video ${video.id}`}
+        class="w-full h-64 object-cover"
+      />
+      <div class="p-8">
+        <div class="space-y-6">
+          <div class="flex justify-between items-start">
+            <span class="text-sm text-green-900 dark:text-gray-400">ID: {video.id}</span>
+            <span class="text-sm text-green-900 dark:text-gray-400">{formattedDate}</span>
+          </div>
+          
+          {video.name && (
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+              {video.name}
+            </h1>
+          )}
+
+          <div class="flex justify-between items-center text-green-900 dark:text-gray-300">
+            {video.note && <span>Note: {video.note}</span>}
+            {video.bpm && <span>BPM: {video.bpm}</span>}
+          </div>
+
+          <div class="prose dark:prose-invert max-w-none" set:html={video.content} />
+
+          
+
+          <div class="flex flex-col space-y-4">
+            {video.url && (
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Descargar/Comprar
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+
+              </div>
+              <div class="flex flex-col space-y-2">
+              {video.url_dk && (
+                <a
+                  href={video.url_dk}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                >
+                  Otras Plataformas
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
+            
+            <a
+              href="/"
+              class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Volver
+            </a>
+          
+          
+          
+            <div class="m-2 space-y-2">
+              <div
+                class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white"
+                tabindex="1"
+              >
+                <div class="flex cursor-pointer items-center justify-between">
+                  <span> HTML </span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                    class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180"
+                  />
+                </div>
+                <div
+                  class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat.
+                </div>
+              </div>
+            
+              <div
+                class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white"
+                tabindex="2"
+              >
+                <div class="flex cursor-pointer items-center justify-between">
+                  <span> CSS </span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                    class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180"
+                  />
+                </div>
+                <div
+                  class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat.
+                </div>
+              </div>
+            
+              <div
+                class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white"
+                tabindex="3"
+              >
+                <div class="flex cursor-pointer items-center justify-between">
+                  <span> JAVASCRIPT </span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                    class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180"
+                  />
+                </div>
+                <div
+                  class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat.
+                </div>
+              </div>
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+
+
+</Layout>

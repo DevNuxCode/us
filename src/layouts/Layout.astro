@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 
 interface Props {
@@ -27,11 +28,13 @@ const {
     <ViewTransitions />
   </head>
   <body class="h-full">
-    <div class="min-h-full flex flex-col">
+    <div class="min-h-full flex flex-col" dark:#ffffff>
+      
       <Header />
       <main class="flex-grow">
         <slot />
       </main>
+      
       <Footer />
     </div>
   </body>

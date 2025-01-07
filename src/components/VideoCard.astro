@@ -1,70 +1,52 @@
 ---
 import type { VideoCardProps } from '../utils/types';
-import VideoModal from './VideoModal.astro';
+import { formatDate } from '../utils/date';
 
 interface Props extends VideoCardProps {}
 
-const { id,
-        date,
-        content,
-        imageUrl,
-        name,
-        note,
-        bpm, 
-        url, 
-        estilo, 
-        url_dk, 
-      } = Astro.props;
-
-const formattedDate = new Date(date).toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-});
+const { id, date, imageUrl, name, note, bpm, url } = Astro.props;
+const formattedDate = formatDate(date);
 ---
 
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-
   <img 
     src={imageUrl} 
-    alt={`Video ${id}`} 
+    alt={name || `Video ${id}`}
     class="w-full h-48 object-cover"
   />
-  
   <div class="p-6">
     <div class="space-y-4">
       <div class="flex justify-between items-start">
-        <span class="text-sm text-gray-500 dark:text-gray-400">Nombre: <strong>{estilo}</strong></span>
-        
+        <span class="text-sm text-gray-500 dark:text-gray-400">ID: {id}</span>
         <span class="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
       </div>
+      {name && (
         <div class="text-gray-900 dark:text-white font-medium">
-          Estilo: {name}
+          {name}
         </div>
-    
+      )}
       <div class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300">
-        {note && <span>Escala: <strong>{note}</strong> </span>}
-        {bpm && <sp0an>BPM: <strong>{bpm}</span>}
-        
+        {note && <span>Note: {note}</span>}
+        {bpm && <span>BPM: {bpm}</span>}
       </div>
     </div>
-    <button
-      class="w-full mt-6 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      onclick={`document.getElementById('modal-${id}').classList.remove('hidden'); document.body.classList.add('overflow-hidden');`}
-    >
-      Ver Detalles
-    </button>
+    <div class="mt-6 space-y-3">
+      <a
+        href={`/video/${id}`}
+        class="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        View Details
+      </a>
+      {url && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+        >
+          Visit URL
+        </a>
+      )}
+    </div>
   </div>
 </div>
-
-<VideoModal 
-  id={id} 
-  date={date} 
-  content={content}
-  name={name}
-  note={note}
-  bpm={bpm}
-  url={url}
-  estilo={estilo}
-  url_dk={url_dk}
-/>

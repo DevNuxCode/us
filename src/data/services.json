@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Professional Audiovisual Production",
+    "description": "We create compelling visual stories that captivate and inspire audiences worldwide."
+  },
+  "advantages": [
+    {
+      "title": "Expert Team",
+      "description": "Our seasoned professionals bring years of industry experience to every project."
+    },
+    {
+      "title": "Cutting-Edge Technology",
+      "description": "We use the latest equipment and software to deliver outstanding results."
+    },
+    {
+      "title": "Creative Excellence",
+      "description": "Our creative approach ensures your story stands out in today's digital landscape."
+    }
+  ],
+  "technologies": [
+    {
+      "name": "4K Video Production",
+      "description": "Ultra-high definition video capture and processing"
+    },
+    {
+      "name": "Professional Audio",
+      "description": "Studio-grade sound recording and mixing"
+    },
+    {
+      "name": "Motion Graphics",
+      "description": "Dynamic visual effects and animations"
+    },
+    {
+      "name": "Color Grading",
+      "description": "Professional color correction and grading"
+    }
+  ]
+}

@@ -20,11 +20,15 @@ export async function getVideos() {
         name: video.acf?.name || '',
         note: video.acf?.note || '',
         bpm: video.acf?.bpm || '',
-        url_dk: video.acf?.url_dk || '',
         url: video.acf?.url || '',
-        estilo: video.acf?.estilo || '',
-
+        url_dk: video.acf?.url_dk || '',
+        url_mp3: video.acf?.url_mp3 || '',
       };
     })
   );
+}
+
+export async function getVideoById(id: number) {
+  const videos = await getVideos();
+  return videos.find(video => video.id === id);
 }

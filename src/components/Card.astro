@@ -3,11 +3,9 @@ interface Props {
   title: string;
   description: string;
   imageUrl: string;
-  estilo: string;
-  url_dk: string
 }
 
-const { title, description, imageUrl, estilo, url_dk } = Astro.props;
+const { title, description, imageUrl } = Astro.props;
 ---
 
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -22,7 +20,6 @@ const { title, description, imageUrl, estilo, url_dk } = Astro.props;
     </h3>
     <p class="text-gray-600 dark:text-gray-300">
       {description}
-      Estilo: {estilo} url:{url_dk}
     </p>
   </div>
 </div>
