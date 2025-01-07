@@ -14,6 +14,7 @@ export interface Video {
     note?: string;
     bpm?: string;
     url?: string;
+    url_dk: string;
   };
   imageUrl?: string;
 }
@@ -27,4 +28,5 @@ export interface VideoCardProps {
   note?: string;
   bpm?: string;
   url?: string;
+  url_dk?: string;
 }

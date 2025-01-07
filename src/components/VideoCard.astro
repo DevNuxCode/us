@@ -8,7 +8,7 @@ const { id, date, imageUrl, name, note, bpm, url, url_dk } = Astro.props;
 const formattedDate = formatDate(date);
 ---
 
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+<div class="bg-white dark:bg-blue-950 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
   <img 
     src={imageUrl} 
     alt={name || `Video ${id}`}
