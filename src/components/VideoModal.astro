@@ -7,9 +7,10 @@ interface Props {
   note?: string;
   bpm?: string;
   url?: string;
+  url_dk?: string;
 }
 
-const { id, date, content, name, note, bpm, url } = Astro.props;
+const { id, date, content, name, note, bpm, url, url_dk } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
   year: 'numeric',
