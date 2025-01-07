@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+import VideoCard from '../../components/VideoCard.astro';
 import { getVideos, getVideoById } from '../../utils/api';
 import { formatDate } from '../../utils/date';
 
@@ -7,12 +9,17 @@ export async function getStaticPaths() {
   const videos = await getVideos();
   return videos.map(video => ({
     params: { id: video.id.toString() },
-    props: { video },
+    props: { video, allVideos: videos },
   }));
 }
 
-const { video } = Astro.props;
+const { video, allVideos } = Astro.props;
 const formattedDate = formatDate(video.date);
+
+// Get related videos (excluding current video)
+const relatedVideos = allVideos
+  .filter(v => v.id !== video.id)
+  .slice(0, 3); // Show only 3 related videos
 ---
 
 <Layout title={`${video.name || `Video ${video.id}`} | Understudios`}>
@@ -26,8 +33,8 @@ const formattedDate = formatDate(video.date);
       <div class="p-8">
         <div class="space-y-6">
           <div class="flex justify-between items-start">
-            <span class="text-sm text-green-900 dark:text-gray-400">ID: {video.id}</span>
-            <span class="text-sm text-green-900 dark:text-gray-400">{formattedDate}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">ID: {video.id}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
           </div>
           
           {video.name && (
@@ -36,7 +43,7 @@ const formattedDate = formatDate(video.date);
             </h1>
           )}
 
-          <div class="flex justify-between items-center text-green-900 dark:text-gray-300">
+          <div class="flex justify-between items-center text-gray-600 dark:text-gray-300">
             {video.note && <span>Note: {video.note}</span>}
             {video.bpm && <span>BPM: {video.bpm}</span>}
           </div>
@@ -51,7 +58,7 @@ const formattedDate = formatDate(video.date);
                 href={video.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               >
                 Descargar/Comprar
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,45 +67,46 @@ const formattedDate = formatDate(video.date);
               </a>
             )}
 
-              </div>
-              <div class="flex flex-col space-y-2">
-              {video.url_dk && (
-                <a
-                  href={video.url_dk}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                >
-                  Otras Plataformas
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              )}
+
+
+            {video.url_dk && (
+              <a
+                href={video.url_dk}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Otras Plataformas
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
             
             <a
-              href="/"
-              class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              href="/videos"
+              class="inline-flex items-center justify-center px-6 py-3 border bg-green-400  dark:bg-white border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-black-700 dark:text-gray-800 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Volver
+              Volver a to Videos
             </a>
-          
-          
-          
-            
-          
-          
-          
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Related Videos Section -->
+    {relatedVideos.length > 0 && (
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Related Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {relatedVideos.map((video) => (
+            <VideoCard {...video} />
+          ))}
+        </div>
+      </div>
+    )}
   </div>
-
-    
-
-
 </Layout>

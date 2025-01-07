@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VideoCard from '../components/VideoCard.astro';
+import { getVideos } from '../utils/api';
+
+const videos = await getVideos();
+---
+
+<Layout title="Videos | Understudios">
+  <section class="py-24 bg-white dark:bg-blue-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">All Videos</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((video) => (
+          <VideoCard {...video} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

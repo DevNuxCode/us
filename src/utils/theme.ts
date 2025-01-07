@@ -15,5 +15,5 @@ export function setTheme(value: ThemeColor) {
 }
 
 export function getStoredTheme(): ThemeColor {
-  return (localStorage.getItem('theme-color') as ThemeColor) || 'blue';
+  return (localStorage.getItem('theme-color') as ThemeColor) || 'red';
 }
