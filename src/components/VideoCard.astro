@@ -14,6 +14,7 @@ const { id,
         url, 
         estilo, 
         url_dk, 
+        url_mp3,
       } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -34,20 +35,23 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
   <div class="p-6">
     <div class="space-y-4">
       <div class="flex justify-between items-start">
-        <span class="text-sm text-gray-500 dark:text-gray-400">Nombre: <strong>{estilo}</strong></span>
         
-        <span class="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
-      </div>
         <div class="text-gray-900 dark:text-white font-medium">
-          Estilo: {name}
+          
+          [ {name} ]
         </div>
-    
+  
+      </div>
+      <div class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300">
+            <span class="text-sm text-gray-500 dark:text-gray-400">Estilo: <strong>{estilo}</strong></span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{formattedDate}</span>
+          </div>
       <div class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300">
         {note && <span>Escala: <strong>{note}</strong> </span>}
         {bpm && <sp0an>BPM: <strong>{bpm}</span>}
         
       </div>
-    </div>
+
     <button
       class="w-full mt-6 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       onclick={`document.getElementById('modal-${id}').classList.remove('hidden'); document.body.classList.add('overflow-hidden');`}
@@ -55,7 +59,6 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
       Ver Detalles
     </button>
   </div>
-</div>
 
 <VideoModal 
   id={id} 
@@ -67,4 +70,5 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
   url={url}
   estilo={estilo}
   url_dk={url_dk}
+  url_mp3={url_mp3}
 />

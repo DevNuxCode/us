@@ -23,6 +23,7 @@ export async function getVideos() {
         url_dk: video.acf?.url_dk || '',
         url: video.acf?.url || '',
         estilo: video.acf?.estilo || '',
+        url_mp3: video.acf?.url_mp3 || '',
 
       };
     })
