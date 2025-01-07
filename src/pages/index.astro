@@ -8,7 +8,7 @@ const videos = await getVideos();
 
 <Layout title="Understudios">
   <!-- Hero Section -->
-  <section class="relative hero-section text-white">
+  <section class="relative hero-section text-white dark:text-white">
     <div class="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
         Welcome to Understudios
@@ -20,19 +20,19 @@ const videos = await getVideos();
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-24 bg-white dark:bg-gray-800">
+  <section id="services" class="py-24 light:bg-white dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <div class="p-6 light:bg-gray-300 dark:bg-gray-700 rounded-lg">
           <h3 class="text-xl font-semibold mb-4">Video Production</h3>
           <p>Professional video production services for all your needs.</p>
         </div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <div class="p-6 light:bg-gray-50 dark:bg-gray-700 rounded-lg">
           <h3 class="text-xl font-semibold mb-4">Animation</h3>
           <p>Creative animation services to bring your ideas to life.</p>
         </div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <div class="p-6 light:bg-gray-50 dark:bg-gray-700 rounded-lg">
           <h3 class="text-xl font-semibold mb-4">Post-Production</h3>
           <p>Expert post-production services for the perfect finish.</p>
         </div>
@@ -41,9 +41,9 @@ const videos = await getVideos();
   </section>
 
   <!-- Videos Section -->
-  <section id="videos" class="py-24 bg-blue-600 dark:bg-blue-950">
+  <section id="videos" class="py-24 light:bg-white dark:bg-blue-950">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Our Videos</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 light:text-gray-900 dark:text-white">Our Videos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video) => (
           <VideoCard {...video} />
@@ -53,13 +53,13 @@ const videos = await getVideos();
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-24 bg-white dark:bg-gray-800">
+  <section id="contact" class="py-24 light:bg-white dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
       <form class="max-w-lg mx-auto">
         <div class="space-y-6">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label for="name" class="block text-sm font-medium light:text-gray-700 dark:text-gray-300">
               Name
             </label>
             <input
