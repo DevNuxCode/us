@@ -63,6 +63,6 @@ body {
 /* Mobile menu button */
 @media (max-width: 1024px) {
   .mobile-menu-button {
-    display: block;
+    display:flexbox;
   }
 }
