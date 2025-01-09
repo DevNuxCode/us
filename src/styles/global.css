@@ -9,7 +9,9 @@
   --theme-yellow: #ca8a04;
   --theme-purple: #7c3aed;
   --theme-green: #059669;
+  --theme-secondary: #0278af;
   --theme-color: var(--theme-blue);
+  --theme-color-secondary: var(--theme-secondary);
 }
 
 /* Light theme */
@@ -17,6 +19,7 @@
   --bg-primary: #ffffff;
   --text-primary: #000000;
   --button-primary: var(--theme-color);
+  --button-secondary: var(--theme-color-secondary);
   --button-hover: color-mix(in srgb, var(--theme-color) 80%, black);
   --hero-bg: var(--theme-color);
   color-scheme: light;
@@ -27,7 +30,9 @@
   --bg-primary: #1a1a1a;
   --text-primary: #ffffff;
   --button-primary: var(--theme-color);
+  --button-secondary: var(--theme-color-secondary);
   --button-hover: color-mix(in srgb, var(--theme-color) 80%, white);
+  --button-hover-secondary: color-mix(in srgb, var(--theme-color) 80%, white);
   --hero-bg: color-mix(in srgb, var(--theme-color) 40%, black);
   color-scheme: dark;
 }
@@ -46,6 +51,16 @@ body {
 .btn-primary:hover {
   background-color: var(--button-hover);
 }
+
+
+.btn-secondary {
+  background-color: var(--button-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-hover-secondary);
+}
+
 
 .hero-section {
   background-color: var(--hero-bg);
