@@ -30,27 +30,27 @@ const { title } = Astro.props;
 
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
+    --accent: 156, 158, 34;
+    --accent-light: 284, 104, 250;
     --accent-dark: 49, 10, 101;
     --accent-gradient: linear-gradient(
       45deg,
       rgb(var(--accent)),
       rgb(var(--accent-light)) 30%,
-      white 60%
+      rgb(150, 3, 3) 60%
     );
     
     /* Light theme colors */
-    --background-light: #ffffff;
-    --text-light: #1a1a1a;
+    --background-light: #52035259;
+    --text-light: #dbdada;
     --card-bg-light: #f0f0f0;
     --active-link-light: #8b0000;
-    --button-purple: #6b46c1;
+    --button-purple: #627706;
     
     /* Dark theme colors */
-    --background-dark: #13151a;
+    --background-dark: #300130;
     --text-dark: #ffffff;
-    --card-bg-dark: #1a1a1a;
+    --card-bg-dark: #30013a;
   }
 
   html {
@@ -84,7 +84,7 @@ const { title } = Astro.props;
 
   @media (max-width: 768px) {
     html {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
 </style>
