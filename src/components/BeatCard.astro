@@ -25,7 +25,10 @@ const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
     <div class="beat-links">
     
       <a href={beat.acf.url_bs} target="_blank" rel="noopener noreferrer" class="beat-button">
-        Descargar/Comprar
+        Descargar
+      </a>
+      <a href={beat.acf.url_bs} target="_blank" rel="noopener noreferrer" class="beat-button">
+        Comprar
       </a>
     </div>
   </div>
@@ -64,7 +67,8 @@ const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
   }
 
   .beat-details {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    display: inline-table;
   }
 
   .beat-description {
@@ -72,18 +76,20 @@ const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
   }
 
   .beat-links {
-    display: flex;
+    display:inline-flex;
     gap: 1rem;
+    
   }
 
   .beat-button {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: var(--button-purple);
-    color: white;
+    color: rgb(252, 197, 238);
     text-decoration: none;
     border-radius: 6px;
     transition: opacity 0.2s ease;
+    
   }
 
   .beat-button:hover {
