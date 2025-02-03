@@ -1,0 +1,64 @@
+---
+import BeatCard from './BeatCard.astro';
+import type { Beat, Media } from '../types/beat';
+
+const response = await fetch('https://python.distribuidoravega.cl/tooly/wp-json/wp/v2/beat/');
+const beats: Beat[] = await response.json();
+
+const beatsWithMedia = await Promise.all(
+  beats.map(async (beat) => {
+    if (beat._links['wp:featuredmedia']) {
+      const mediaResponse = await fetch(beat._links['wp:featuredmedia'][0].href);
+      const media: Media = await mediaResponse.json();
+      return { ...beat, featuredImage: media.source_url };
+    }
+    return { ...beat, featuredImage: null };
+  })
+);
+---
+
+<section class="beats-section">
+  <div class="container">
+    <h2>Featured Beats</h2>
+    <div class="beats-grid">
+      {beatsWithMedia.map((beat) => <BeatCard beat={beat} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .beats-section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .beats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .beats-section {
+      padding: 2rem 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,73 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import VideoCard from '../components/VideoCard.astro';
-import { getVideos } from '../utils/api';
-
-
-const videos = await getVideos();
-const featuredVideos = videos.slice(0, 3); // Show only first 3 videos
+import Hero from '../components/Hero.astro';
+import BeatsList from '../components/BeatsList.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Layout title="Understudios">
-  <!-- Hero Section -->
-  <section class="relative hero-section text-white dark:text-gray-500">
-    <div class="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 text-center">
-      <center><img src="/logo2.png" class="align-center" alt="Logo Understudios" width="200" height="200" /></center>
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-        Bienvenidos a Understudios
-      </h1>
-      <p class="mt-6 text-xl">
-        Creación musical para artistas emergentes
-      </p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark dark:white">Nuestros Servicios</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-grey-50 dark:bg-grey-50 rounded-lg ">
-          <h3 class="text-xl font-semibold mb-4 light:text-black dark:text-white">Video Production</h3>
-          <p>Professional video production services for all your needs.</p>
-        </div>
-        <div class="p-6 bg-gray-50 light:bg-grey-800 dark:bg-gray-800 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4 light:text-black dark:text-white">Animation</h3>
-          <p>Creative animation services to bring your ideas to life.</p>
-        </div>
-        <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <h3 class="text-xl font-semibold mb-4">Post-Production</h3>
-          <p>Expert post-production services for the perfect finish.</p>
-        </div>
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/services" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white btn-secondary hover:btn-secondary">
-          Ver Servicios 
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Videos Section -->
-  <section id="videos" class="py-24 bg-white dark:bg-blue-950">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Catalogo de Beats</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {featuredVideos.map((video) => (
-          <VideoCard {...video} />
-        ))}
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/videos" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white btn-secondary hover:btn-secondary">
-          Todos los Beats
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section remains the same -->
+<Layout title="Home">
+  <main>
+    <Hero />
+    <BeatsList />
+    <ContactForm />
+  </main>
 </Layout>
 
-  <!-- Contact Section -->
-  
-</Layout>
+<style>
+  main {
+    width: 100%;
+  }
+</style>

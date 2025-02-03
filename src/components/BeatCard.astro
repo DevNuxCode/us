@@ -1,0 +1,94 @@
+---
+import type { Beat } from '../types/beat';
+
+interface Props {
+  beat: Beat & { featuredImage: string | null };
+}
+
+const { beat } = Astro.props;
+const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
+---
+
+<div class="beat-card">
+  <img 
+    src={beat.featuredImage || defaultImage} 
+    alt={beat.title.rendered} 
+    class="beat-image" 
+  />
+  <div class="beat-content">
+    <h2 set:html={beat.title.rendered} />
+    <div class="beat-details">
+      <p><strong>BPM:</strong> {beat.acf.bpm}</p>
+      <p><strong>Note:</strong> {beat.acf.note}</p>
+    </div>
+    <div class="beat-description" set:html={beat.content.rendered} />
+    <div class="beat-links">
+      <a href={beat.acf.url_yt} target="_blank" rel="noopener noreferrer" class="beat-button">
+        YouTube
+      </a>
+      <a href={beat.acf.url_bs} target="_blank" rel="noopener noreferrer" class="beat-button">
+        Beat Store
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .beat-card {
+    background: var(--card-bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  [data-theme="light"] .beat-card {
+    background: var(--card-bg-light);
+  }
+
+  .beat-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .beat-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .beat-content {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .beat-details {
+    margin-bottom: 1rem;
+  }
+
+  .beat-description {
+    margin-bottom: 1.5rem;
+  }
+
+  .beat-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .beat-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--button-purple);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+  }
+
+  .beat-button:hover {
+    opacity: 0.9;
+  }
+</style>

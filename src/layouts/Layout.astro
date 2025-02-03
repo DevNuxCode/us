@@ -1,42 +1,108 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-
-import '../styles/global.css';
-import '../styles/main.css'
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
   title: string;
-  description?: string;
 }
 
-const { 
-  title, 
-  description = "Understudios - Creative Digital Agency"
-} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content="Understudios - Your Beat Marketplace" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title} | Understudios</title>
     <ViewTransitions />
   </head>
-  <body class="h-full">
-    <div class="min-h-full flex flex-col" >
-      
-      <Header />
-      <main class="flex-grow">
-        <slot />
-      </main>
-      
-      <Footer />
-    </div>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+    
+    /* Light theme colors */
+    --background-light: #ffffff;
+    --text-light: #1a1a1a;
+    --card-bg-light: #f0f0f0;
+    --active-link-light: #8b0000;
+    --button-purple: #6b46c1;
+    
+    /* Dark theme colors */
+    --background-dark: #13151a;
+    --text-dark: #ffffff;
+    --card-bg-dark: #1a1a1a;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--background-dark);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html[data-theme="light"] {
+    background: var(--background-light);
+    color: var(--text-light);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+      Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<script>
+  // Theme toggle functionality
+  const theme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  document.addEventListener('astro:page-load', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    themeToggle?.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  });
+</script>
