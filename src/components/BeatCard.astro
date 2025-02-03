@@ -19,15 +19,13 @@ const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
     <h2 set:html={beat.title.rendered} />
     <div class="beat-details">
       <p><strong>BPM:</strong> {beat.acf.bpm}</p>
-      <p><strong>Note:</strong> {beat.acf.note}</p>
+      <p><strong>Note:</strong> {beat.acf.nota}</p>
     </div>
     <div class="beat-description" set:html={beat.content.rendered} />
     <div class="beat-links">
-      <a href={beat.acf.url_yt} target="_blank" rel="noopener noreferrer" class="beat-button">
-        YouTube
-      </a>
+    
       <a href={beat.acf.url_bs} target="_blank" rel="noopener noreferrer" class="beat-button">
-        Beat Store
+        Descargar/Comprar
       </a>
     </div>
   </div>
@@ -89,6 +87,8 @@ const defaultImage = 'https://via.placeholder.com/400x300?text=No+Image';
   }
 
   .beat-button:hover {
-    opacity: 0.9;
+    opacity: 0.7;
+    background: rgb(77, 9, 65);
+    
   }
 </style>
