@@ -2,7 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
-import Analytics from '@vercel/analytics/astro'
+
 
 interface Props {
   title: string;
@@ -25,7 +25,7 @@ const { title } = Astro.props;
   <body>
     <Navbar />
     <slot />
-    <Analytics /> 
+    
     <Footer />
   </body>
 </html>
