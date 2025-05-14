@@ -1,0 +1,68 @@
+[
+  {
+    "id": "clip1",
+    "title": "City Lights",
+    "artist": "Luna Ray",
+    "tags": ["Hip Hop", "Urban", "Night"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/n2B_x9P5IXs?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "n2B_x9P5IXs",
+    "thumbnail": "https://img.youtube.com/vi/n2B_x9P5IXs/maxresdefault.jpg",
+    "year": 2023,
+    "description": "A cinematic exploration of urban nightlife"
+  },
+  {
+    "id": "clip2",
+    "title": "Desert Storm",
+    "artist": "Echo Valley",
+    "tags": ["Rock", "Desert", "Epic"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "dQw4w9WgXcQ",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "year": 2022,
+    "description": "A journey through the mystical desert landscapes"
+  },
+  {
+    "id": "clip3",
+    "title": "Neon Dreams",
+    "artist": "Cyber Pulse",
+    "tags": ["Electronic", "Cyberpunk", "Futuristic"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YykjpeuMNEk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "YykjpeuMNEk",
+    "thumbnail": "https://img.youtube.com/vi/YykjpeuMNEk/maxresdefault.jpg",
+    "year": 2023,
+    "description": "A futuristic vision of a neon-lit cyberpunk world"
+  },
+  {
+    "id": "clip4",
+    "title": "Ocean Breeze",
+    "artist": "Coastal Waves",
+    "tags": ["Pop", "Summer", "Beach"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jfKfPfyJRdk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "jfKfPfyJRdk",
+    "thumbnail": "https://img.youtube.com/vi/jfKfPfyJRdk/maxresdefault.jpg",
+    "year": 2021,
+    "description": "A sunny beach day with friends and music"
+  },
+  {
+    "id": "clip5",
+    "title": "Mountain Echo",
+    "artist": "Highland Mist",
+    "tags": ["Folk", "Nature", "Mountains"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/K_yBUfMGvzc?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "K_yBUfMGvzc",
+    "thumbnail": "https://img.youtube.com/vi/K_yBUfMGvzc/maxresdefault.jpg",
+    "year": 2022,
+    "description": "A spiritual journey through majestic mountain landscapes"
+  },
+  {
+    "id": "clip6",
+    "title": "Urban Jungle",
+    "artist": "City Beats",
+    "tags": ["Hip Hop", "Urban", "City"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HocHnQ3JYvw?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "HocHnQ3JYvw",
+    "thumbnail": "https://img.youtube.com/vi/HocHnQ3JYvw/maxresdefault.jpg",
+    "year": 2023,
+    "description": "A day in the life of urban culture and street art"
+  }
+]

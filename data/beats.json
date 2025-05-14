@@ -1,0 +1,74 @@
+[
+  {
+    "id": "beat1",
+    "title": "Summer Vibes",
+    "bpm": 95,
+    "key": "C Minor",
+    "tags": ["Trap", "Chill", "Summer"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/n2B_x9P5IXs?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "n2B_x9P5IXs",
+    "thumbnail": "https://img.youtube.com/vi/n2B_x9P5IXs/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/summer-vibes",
+    "price": "$29.99"
+  },
+  {
+    "id": "beat2",
+    "title": "Midnight Dreams",
+    "bpm": 140,
+    "key": "G Minor",
+    "tags": ["Hip Hop", "Dark", "Atmospheric"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "dQw4w9WgXcQ",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/midnight-dreams",
+    "price": "$34.99"
+  },
+  {
+    "id": "beat3",
+    "title": "Urban Flow",
+    "bpm": 90,
+    "key": "E Minor",
+    "tags": ["Trap", "Urban", "Bass"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YykjpeuMNEk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "YykjpeuMNEk",
+    "thumbnail": "https://img.youtube.com/vi/YykjpeuMNEk/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/urban-flow",
+    "price": "$24.99"
+  },
+  {
+    "id": "beat4",
+    "title": "Sunset Boulevard",
+    "bpm": 85,
+    "key": "A Minor",
+    "tags": ["Lo-Fi", "Chill", "Melodic"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jfKfPfyJRdk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "jfKfPfyJRdk",
+    "thumbnail": "https://img.youtube.com/vi/jfKfPfyJRdk/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/sunset-boulevard",
+    "price": "$19.99"
+  },
+  {
+    "id": "beat5",
+    "title": "Electric Dreams",
+    "bpm": 120,
+    "key": "F Major",
+    "tags": ["Electronic", "Dance", "Energetic"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/K_yBUfMGvzc?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "K_yBUfMGvzc",
+    "thumbnail": "https://img.youtube.com/vi/K_yBUfMGvzc/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/electric-dreams",
+    "price": "$39.99"
+  },
+  {
+    "id": "beat6",
+    "title": "Golden Hour",
+    "bpm": 110,
+    "key": "D Major",
+    "tags": ["Pop", "Upbeat", "Summer"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HocHnQ3JYvw?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "HocHnQ3JYvw",
+    "thumbnail": "https://img.youtube.com/vi/HocHnQ3JYvw/maxresdefault.jpg",
+    "buyLink": "https://beatstars.com/beat/golden-hour",
+    "price": "$29.99"
+  }
+]
