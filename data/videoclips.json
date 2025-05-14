@@ -1,68 +1,25 @@
 [
   {
     "id": "clip1",
-    "title": "City Lights",
-    "artist": "Luna Ray",
-    "tags": ["Hip Hop", "Urban", "Night"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/n2B_x9P5IXs?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "n2B_x9P5IXs",
-    "thumbnail": "https://img.youtube.com/vi/n2B_x9P5IXs/maxresdefault.jpg",
+    "title": "Omar Bf - Paso a Buscarte Ft @KRISER1 x @Jerekream x G Lyo Franklika x Cromwell (Prod. @onlykings212)",
+    "artist": "Cromwell",
+    "tags": ["Reggaeton", "Urban", "Night"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AZBz7GammfQ?si=QtUjakDLraKI-Rvt\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "AZBz7GammfQ",
+    "thumbnail": "https://img.youtube.com/vi/AZBz7GammfQ/maxresdefault.jpg",
     "year": 2023,
     "description": "A cinematic exploration of urban nightlife"
   },
   {
     "id": "clip2",
-    "title": "Desert Storm",
-    "artist": "Echo Valley",
-    "tags": ["Rock", "Desert", "Epic"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "dQw4w9WgXcQ",
-    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    "year": 2022,
-    "description": "A journey through the mystical desert landscapes"
-  },
-  {
-    "id": "clip3",
-    "title": "Neon Dreams",
-    "artist": "Cyber Pulse",
-    "tags": ["Electronic", "Cyberpunk", "Futuristic"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/YykjpeuMNEk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "YykjpeuMNEk",
-    "thumbnail": "https://img.youtube.com/vi/YykjpeuMNEk/maxresdefault.jpg",
-    "year": 2023,
-    "description": "A futuristic vision of a neon-lit cyberpunk world"
-  },
-  {
-    "id": "clip4",
-    "title": "Ocean Breeze",
-    "artist": "Coastal Waves",
-    "tags": ["Pop", "Summer", "Beach"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jfKfPfyJRdk?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "jfKfPfyJRdk",
-    "thumbnail": "https://img.youtube.com/vi/jfKfPfyJRdk/maxresdefault.jpg",
-    "year": 2021,
-    "description": "A sunny beach day with friends and music"
-  },
-  {
-    "id": "clip5",
-    "title": "Mountain Echo",
-    "artist": "Highland Mist",
-    "tags": ["Folk", "Nature", "Mountains"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/K_yBUfMGvzc?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "K_yBUfMGvzc",
-    "thumbnail": "https://img.youtube.com/vi/K_yBUfMGvzc/maxresdefault.jpg",
-    "year": 2022,
-    "description": "A spiritual journey through majestic mountain landscapes"
-  },
-  {
-    "id": "clip6",
-    "title": "Urban Jungle",
-    "artist": "City Beats",
-    "tags": ["Hip Hop", "Urban", "City"],
-    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HocHnQ3JYvw?si=DjfELw38vi12EnDS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-    "videoId": "HocHnQ3JYvw",
-    "thumbnail": "https://img.youtube.com/vi/HocHnQ3JYvw/maxresdefault.jpg",
-    "year": 2023,
-    "description": "A day in the life of urban culture and street art"
+    "title": "Latinoamericalle Franklika Company 2009 ( Barrio Franklin )",
+    "artist": "Understudios",
+    "tags": ["Dancehall", "Callejero"],
+    "embedCode": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/n-bmNhxesfI?si=EYdLeI674IVbaW0f\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "videoId": "n-bmNhxesfI",
+    "thumbnail": "https://img.youtube.com/vi/n-bmNhxesfI/default.jpg",
+    "year": 2009,
+    "description": "este video fue echo por el grupo de estudiantes de  uniacc con su produccion y sofesticados equipos de grabacion profesionales, el video latinoamericalle del grupo franklika company.durantes 2 dias de grabacion en distintas locaciones del barrio franklin. de la gente latina,y gente de la calle.muchisimas gracias por su colaboracion, agradesemos igual de parte de la agrupacion (franklika com.) les deseamos lo mejor a lo mejor al grupo de estudiantes... espero q allan disfrutado del video y gracias a dioz por esta oportunidad q se nos dio en la vida...    G LyO Franklika "
   }
+  
 ]

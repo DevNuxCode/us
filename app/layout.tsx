@@ -19,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html lang="en" className="scroll-smooth">
+      
       <body className={cn(inter.className, "antialiased")}>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
         <Providers>
           <Navbar />
           <main>{children}</main>
