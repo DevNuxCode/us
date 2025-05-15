@@ -1,40 +1,40 @@
 {
   "hero": {
     "title": "UNDERSTUDIOS",
-    "subtitle": "Premium Music Production",
-    "description": "Where talent meets technology to create timeless music. Our state-of-the-art studio offers beat production, mixing, mastering, and full video production services.",
-    "cta": "Explore Our Work",
+    "subtitle": "Producción Musical Profesional",
+    "description": "Donde el talento se fusiona con la tecnología para crear música atemporal. Nuestro estudio de vanguardia ofrece producción de ritmos, mezcla, masterización y servicios completos de producción de video.",
+    "cta": "Explore nuestro catálogo",
     "backgroundImage": "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   "beats": {
     "title": "Beats",
-    "subtitle": "Premium Instrumentals",
-    "description": "Browse our collection of professionally crafted beats. Find the perfect sound for your next project.",
-    "cta": "Listen Now"
+    "subtitle": "Licencias para instrumental",
+    "description": "Explora nuestra colección de ritmos profesionales. Encuentra el sonido perfecto para tu próximo proyecto.",
+    "cta": "Oír Ahora"
   },
   "videoclips": {
     "title": "Videoclips",
     "subtitle": "Visual Storytelling",
-    "description": "Check out our portfolio of music videos and visual productions. From concept to final cut, we bring your vision to life.",
-    "cta": "Watch Now"
+    "description": "Descubre nuestro portafolio de videos musicales y producciones visuales. Desde el concepto hasta el montaje final, damos vida a tu visión.",
+    "cta": "Ver Ahora"
   },
   "productions": {
     "title": "Productions",
     "subtitle": "Full Albums & EPs",
-    "description": "Explore our past album productions and studio collaborations with artists from around the world.",
-    "cta": "See Projects"
+    "description": "Explora nuestras producciones de álbumes anteriores y colaboraciones de estudio con artistas de todo el mundo.",
+    "cta": "Ver Proyectos"
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Get In Touch",
-    "description": "Ready to start your next project? Contact us today to schedule a studio session or discuss your production needs.",
-    "email": "info@understudios.com",
+    "title": "Contacto",
+    "subtitle": "A un clic",
+    "description": "¿Listo para comenzar tu próximo proyecto? Contáctanos hoy para programar una sesión de estudio o hablar sobre tus necesidades de producción.",
+    "email": "understudios.cl@gmail.com",
     "phone": "+1 (555) 123-4567",
-    "address": "123 Music Avenue, Los Angeles, CA 90001",
+    "address": "La Florida, Región Metrop",
     "socials": {
-      "instagram": "https://instagram.com/understudios",
-      "youtube": "https://youtube.com/understudios",
-      "tiktok": "https://tiktok.com/@understudios"
+      "instagram": "https://www.instagram.com/understudios.cl/",
+      "youtube": "https://www.youtube.com/@understudioscl",
+      "tiktok": "https://www.tiktok.com/@understudioscl"
     }
   }
 }

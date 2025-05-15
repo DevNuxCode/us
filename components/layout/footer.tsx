@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">UNDERSTUDIOS</h3>
             <p className="text-muted-foreground mb-4">
-              Where talent meets technology to create timeless music. Professional music production studio offering premium beats, videoclips, and full productions.
+              Donde el talento se fusiona con la tecnología para crear música atemporal. Estudio de producción musical profesional que ofrece ritmos premium, videoclips y producciones completas.
             </p>
             <div className="flex space-x-4 mt-6">
               <Link 
