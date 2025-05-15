@@ -18,7 +18,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4 mt-6">
               <Link 
-                href="https://instagram.com/understudios" 
+                href="https://www.instagram.com/understudios.cl/" 
                 target="_blank"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Instagram"
@@ -26,7 +26,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link 
-                href="https://youtube.com/understudios" 
+                href="https://www.youtube.com/@understudioscl" 
                 target="_blank"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="YouTube"
@@ -34,7 +34,7 @@ export function Footer() {
                 <Youtube className="w-5 h-5" />
               </Link>
               <Link 
-                href="https://tiktok.com/@understudios" 
+                href="https://www.tiktok.com/@understudioscl" 
                 target="_blank"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="TikTok"
@@ -87,10 +87,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">123 Music Avenue</li>
-              <li className="text-muted-foreground">Los Angeles, CA 90001</li>
-              <li className="text-muted-foreground">info@understudios.com</li>
-              <li className="text-muted-foreground">+1 (555) 123-4567</li>
+              
+              <li className="text-muted-foreground">La Florida, Region Metropolitana, Chile</li>
+              <li className="text-muted-foreground">understudios.cl@gmail.com</li>
+              
             </ul>
           </div>
         </div>
@@ -98,7 +98,7 @@ export function Footer() {
         {/* Bottom Copyright */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} UNDERSTUDIOS. All rights reserved.
+            © {currentYear} UNDERSTUDIOS. Todos los derechos reservados.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">

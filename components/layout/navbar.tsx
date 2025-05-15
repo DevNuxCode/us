@@ -62,7 +62,7 @@ export function Navbar() {
           <div className="flex-shrink-0 font-bold text-2xl">
             <Link href="/" className="flex items-center gap-2">
               <span className="hidden md:block">UNDERSTUDIOS</span>
-              <span className="md:hidden">US</span>
+              <span className="md:hidden"><div className="text-red-100">US</div></span>
             </Link>
           </div>
           
